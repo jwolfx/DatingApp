@@ -4,11 +4,11 @@ namespace DatingApp.API.Dtos
 {
     public class UserForRegisterDto
     {
-        [Required]
+        [Required(ErrorMessage = "El campo Username es requerido.")]
         public string Username { get; set; }
 
-        [Required]
-        [StringLength(8, MinimumLength = 4, ErrorMessage = "El Password debe tener un mínimo de 4 caracteres y un máximo de 8.")]
+        [Required(ErrorMessage = "El campo Password es requerido.")]
+        [StringLength(8, MinimumLength = 4, ErrorMessage = "El campo Password debe tener entre 4 y 8 caracteres de largo.")]
         public string Password { get; set; }
     }
 }

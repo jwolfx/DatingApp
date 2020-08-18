@@ -13,13 +13,11 @@ export class ValueComponent implements OnInit {
   constructor(private httpClient: HttpClient) {
   }
 
-  // tslint:disable-next-line: typedef
-  ngOnInit() {
+  ngOnInit(): void {
     this.getValues();
   }
 
-  // tslint:disable-next-line: typedef
-  getValues() {
+  getValues(): void {
     this.httpClient.get('http://localhost:5000/api/values')
     .subscribe(response => {
       this.values = response;
